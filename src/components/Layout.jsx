@@ -2,7 +2,7 @@ import { Link, Outlet, useLocation } from 'react-router-dom';
 
 export const Layout = () => {
   const location = useLocation();
-  console.log(location);
+  
 
   return (
     <div className="md:flex md:min-h-screen">
@@ -20,7 +20,7 @@ export const Layout = () => {
           </Link>
           <Link
             className={`${location.pathname === '/clientes/nuevo' ? 'text-blue-300' : 'text-gray-50'} text-2xl block mt-2 hover:text-blue-300`}
-            to="/cliente/nuevo"
+            to="/clientes/nuevo"
           >
             Nuevo cliente
           </Link>
