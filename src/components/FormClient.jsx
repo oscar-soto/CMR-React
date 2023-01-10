@@ -1,4 +1,4 @@
-export const Form = () => {
+export const FormClient = () => {
   return (
     <>
       <div className="mb-4">
