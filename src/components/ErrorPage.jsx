@@ -8,7 +8,7 @@ export const ErrorPage = () => {
         CRM - Clientes
       </h1>
       <p className="text-center">Hubo un error</p>
-      <p className="text-center">{error.message}</p>
+      <p className="text-center">{error.message || error.statusText}</p>
     </div>
   );
 };

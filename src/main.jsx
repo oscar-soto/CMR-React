@@ -4,7 +4,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { Index, loader as clientsLoader } from './pages/Index';
 import { NewClient, action as newClientAction } from './pages/NewClient';
-import { EditClient, loader as editClientLoader } from './pages/EditClient';
+import {
+  EditClient,
+  loader as editClientLoader,
+  action as editClientAction,
+} from './pages/EditClient';
 
 import { Layout } from './components/Layout';
 import { ErrorPage } from './components/ErrorPage';
@@ -25,11 +29,14 @@ const router = createBrowserRouter([
         path: '/clientes/nuevo',
         element: <NewClient />,
         action: newClientAction,
+        errorElement: <ErrorPage />,
       },
       {
         path: '/clientes/:clienteId/editar',
         element: <EditClient />,
         loader: editClientLoader,
+        action: editClientAction,
+        errorElement: <ErrorPage />,
       },
     ],
   },

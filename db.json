@@ -22,11 +22,12 @@
       "empresa": "Codigo Con Juan"
     },
     {
-      "id": 4,
-      "nombre": "Miguel",
-      "telefono": 319381983,
+      "nombre": "Miguel (Actualizado)",
+      "empresa": "Codigo Con Juan",
       "email": "miguel@juan.com",
-      "empresa": "Codigo Con Juan"
+      "telefono": "319381983",
+      "notas": "Agregar nota",
+      "id": 4
     },
     {
       "id": 5,

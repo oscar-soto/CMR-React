@@ -1,13 +1,14 @@
 /**
- * Send data to DB
- * @param {{}} data
+ * 
+ * @param {number} id 
+ * @param {{}} data 
  */
-export const addClient = async (data) => {
+export const updateClient = async (id, data) => {
   const url = import.meta.env.VITE_API_URL;
 
   try {
-    const resp = await fetch(url, {
-      method: 'POST',
+    const resp = await fetch(`${url}/${id}`, {
+      method: 'PUT',
       body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json',
@@ -17,4 +18,4 @@ export const addClient = async (data) => {
   } catch (error) {
     console.log(error);
   }
-};
+}
