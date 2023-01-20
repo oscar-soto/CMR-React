@@ -1,7 +1,15 @@
-import { Navigate, useNavigate } from "react-router-dom";
+import { Form, redirect, useNavigate } from 'react-router-dom';
+import { deleteClient } from '../data';
+
+export async function action({ params }) {
+  const { clienteId } = params;
+
+  await deleteClient(clienteId);
+  return redirect('/');
+}
 
 export const Client = ({ client }) => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const { id, nombre, telefono, email, empresa } = client;
   return (
@@ -22,7 +30,7 @@ export const Client = ({ client }) => {
         </p>
       </td>
 
-      <td className="p-6 flex gap-3">
+      <td className="p-6 flex items-center gap-3">
         <button
           type="button"
           className="text-blue-600 hover:text-blue-700 uppercase font-bold text-xs"
@@ -30,13 +38,23 @@ export const Client = ({ client }) => {
         >
           Editar
         </button>
-
-        <button
-          type="button"
-          className="text-red-600 hover:text-red-700 uppercase font-bold text-xs"
+        <Form
+          className='flex'
+          method="POST"
+          action={`/clientes/${id}/eliminar`}
+          onSubmit={(e) => {
+            if (!confirm('Desea eliminar este registro ?')) {
+              e.preventDefault();
+            }
+          }}
         >
-          Eliminar
-        </button>
+          <button
+            type="submit"
+            className="text-red-600 hover:text-red-700 uppercase font-bold text-xs"
+          >
+            Eliminar
+          </button>
+        </Form>
       </td>
     </tr>
   );
