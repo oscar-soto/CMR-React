@@ -42,6 +42,14 @@
       "telefono": "937719804",
       "notas": "desea un ecommerce",
       "id": 6
+    },
+    {
+      "nombre": "Oscar 2",
+      "empresa": "Oscar Globant",
+      "email": "oscar.espinoza@globant.cl",
+      "telefono": "23948239",
+      "notas": "Esto es un test",
+      "id": 7
     }
   ]
 }

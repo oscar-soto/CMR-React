@@ -2,7 +2,7 @@
  * Send data to DB
  * @param {data} dataClient
  */
-export const addClients = async (data) => {
+export const addClient = async (data) => {
   const url = import.meta.env.VITE_API_URL;
 
   try {

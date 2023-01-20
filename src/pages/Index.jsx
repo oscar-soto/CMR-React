@@ -1,9 +1,9 @@
 import { useLoaderData } from 'react-router-dom';
 import { Client } from '../components/Client';
-import { getClients } from '../data/getClients';
+import { getAllClients } from '../data';
 
 export function loader() {
-  const clients = getClients();
+  const clients = getAllClients();
   return clients;
 }
 
