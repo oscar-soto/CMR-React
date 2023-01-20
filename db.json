@@ -34,6 +34,14 @@
       "telefono": 1398198938,
       "email": "pedro@juan.com",
       "empresa": "Codigo Con Juan"
+    },
+    {
+      "nombre": "Oscar desde React",
+      "empresa": "codigo oscar ",
+      "email": "oscarantonio.soto1998@gmail.com",
+      "telefono": "937719804",
+      "notas": "desea un ecommerce",
+      "id": 6
     }
   ]
 }
