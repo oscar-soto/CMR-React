@@ -4,12 +4,12 @@ import { getClients } from '../data/getClients';
 
 export function loader() {
   const clients = getClients();
-  return clients || {};
+  return clients;
 }
 
 export const Index = () => {
   const clients = useLoaderData();
-  
+
   return (
     <>
       <h1 className="font-black text-blue-900 text-4xl">Clientes</h1>
