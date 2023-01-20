@@ -6,10 +6,18 @@ export async function action({ request }) {
   const formData = await request.formData();
   const data = Object.fromEntries(formData);
 
-  // Validacion
+  const email = formData.get('email');
+  let regex = new RegExp(
+    "([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|\"([]!#-[^-~ \t]|(\\[\t -~]))+\")@([!#-'*+/-9=?A-Z^-~-]+(.[!#-'*+/-9=?A-Z^-~-]+)*|[[\t -Z^-~]*])"
+  ); 
+
+  // Validation
   const errors = [];
   if (Object.values(data).includes('')) {
     errors.push('Todos los campos son obligatorios');
+  }
+  if(!regex.test(email)) {
+    errors.push('El email no es valido')
   }
 
   // Return errors
@@ -21,8 +29,6 @@ export async function action({ request }) {
 export const NewClient = () => {
   const errors = useActionData();
   const navigate = useNavigate();
-
-  console.log(errors);
 
   return (
     <>
@@ -42,7 +48,7 @@ export const NewClient = () => {
 
       <div className="bg-white shadow rounded-md md:w-3/4 mx-auto px-5 py-10 mt-20">
         {errors?.length && errors.map((err, i) => <Error key={i}>{err}</Error>)}
-        
+
         <Form method="POST">
           <FormClient />
 
